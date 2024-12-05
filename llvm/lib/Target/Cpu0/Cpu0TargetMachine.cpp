@@ -1,4 +1,4 @@
-#include "LLVM/MC/TargetRegistry.h"
+#include "llvm/MC/TargetRegistry.h"
 
 #define DEBUG_TYPE "cpu0"
 
