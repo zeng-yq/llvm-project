@@ -12,11 +12,12 @@ build_llvm()
     echo "OS =" ${OS}
 
     cmake ../llvm -GNinja \
+    -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD="Cpu0" \
     -DLLVM_OPTIMIZED_TABLEGEN=ON \
     -DLLVM_TARGETS_TO_BUILD="X86;Mips" \
     -DCMAKE_BUILD_TYPE=Debug \
     -DBUILD_SHARED_LIBS=ON \
-    -DLLVM_ENABLE_PROJECTS=clang \
+    -DLLVM_ENABLE_PROJECTS=clang
     -DLLVM_FORCE_VC_REPOSITORY="https://github.com/zeng-yq/llvm-project.git"
 
     time ninja -j 2
